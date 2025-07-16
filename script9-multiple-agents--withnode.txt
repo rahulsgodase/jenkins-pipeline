@@ -2,7 +2,7 @@ pipeline {
 agent{
 label{
 		label "built-in"
-		customWorkspace "/data/pipeline"
+		customWorkspace "/mnt/pipeline"
 }
 }
 
@@ -15,10 +15,10 @@ stages {
 		
 		}
 		
-		stage ("on slave"){
+		stage ("on slave-1"){
 		agent {
-		node {
-				label "linux-slave"
+		label {
+				label "slave-1"
 				customWorkspace "/home/ec2-user"
 		}
 		
